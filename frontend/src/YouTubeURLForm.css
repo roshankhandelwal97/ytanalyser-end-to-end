@@ -1,10 +1,33 @@
 /* YouTubeURLForm.css */
 .form-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh; /* Full viewport height */
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f0f0f1; /* Soft white background */
+    color: #333; /* Dark text for better contrast */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Consistent font */
+}
+
+h1 {
+    color: #0056b3; /* Dark blue for the heading */
+    font-size: 32px; /* Large font size for visibility */
+    margin-bottom: 10px; /* Space before the description */
+}
+
+p {
+    margin-bottom: 20px; /* Space before the instructions */
+    font-size: 18px; /* Slightly larger font for readability */
+    text-align: center; /* Center align the description */
+}
+
+.instructions {
+    margin-bottom: 20px; /* Space before the form */
+    list-style-position: inside; /* Ensure numbers are inside and align with text */
+    text-align: center; /* Align text to the left */
+    width: 80%; /* Control width to centralize content */
+    padding-left: 0; /* Adjust padding for alignment */
 }
 
 .form {
@@ -12,27 +35,30 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background: white;
+    background: white; /* Light background for the form */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #333; /* Dark text for contrast */
 }
 
 .input {
-    width: 300px; /* Set the width of the input */
-    height: 40px; /* Set the height of the input */
+    width: 300px;
+    height: 40px;
     margin-bottom: 20px;
     padding: 8px 12px;
-    font-size: 16px; /* Larger font size */
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #fff; /* White background for input */
+    color: #333; /* Dark text color */
 }
 
 .button {
-    width: 320px; /* Slightly wider than the input */
-    height: 50px; /* Taller button for easier clicking */
-    font-size: 18px; /* Larger font size */
-    color: black;
-    background-color: #d1ecf1; /* Bootstrap blue */
+    width: 320px;
+    height: 50px;
+    font-size: 18px;
+    color: white;
+    background-color: #0056b3; /* Consistent blue theme */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -40,5 +66,5 @@
 }
 
 .button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #003d7a; /* Darker blue on hover */
 }

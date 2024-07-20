@@ -4,6 +4,8 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Consistent font */
+
 }
 
 .chat-box {
@@ -32,12 +34,12 @@
 
 .question {
     align-self: flex-start;
-    background-color: #f0f0f0;
+    background-color: #e8f4fd; /* Light blue for questions */
 }
 
 .answer {
     align-self: flex-end;
-    background-color: #d1ecf1;
+    background-color: #47a2c8; /* Different shade of blue for answers */
 }
 
 .chat-input {

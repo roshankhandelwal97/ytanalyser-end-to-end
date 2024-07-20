@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+.App-header {
+  background-color: #1e2022; /* Darker shade for more contrast */
+  color: #e8e8e8; /* Light grey color for text */
+}
+
+.App-link {
+  color: #4a90e2; /* Softer blue */
+}
+
+/* Add elegant font */
+* {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+

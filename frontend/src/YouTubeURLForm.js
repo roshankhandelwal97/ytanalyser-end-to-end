@@ -5,20 +5,12 @@ import './YouTubeURLForm.css';
 
 function YouTubeURLForm() {
     const [url, setUrl] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        axios.get('http://127.0.0.1:8000/videoanalyser/get_csrf_token/')
-            .then(response => {
-                const token = response.data.csrfToken;
-                axios.defaults.headers.common['X-CSRFToken'] = token;
-                axios.defaults.headers.post['Content-Type'] = 'application/json';
-            })
-            .catch(error => console.error('Error fetching CSRF token:', error));
-    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setIsLoading(true);
         try {
             const response = await axios.post('http://127.0.0.1:8000/videoanalyser/process_video/', JSON.stringify({ youtube_url: url }), {
                 headers: {
@@ -27,14 +19,23 @@ function YouTubeURLForm() {
                 }
             });
             console.log(response);
+            setIsLoading(false);
             navigate('/chat');
         } catch (error) {
             console.error('Error processing video URL:', error);
+            setIsLoading(false);
         }
     };
 
     return (
         <div className="form-container">
+            <h1>YTVideoAnalyser</h1>
+            <p>Welcome to YTVideoAnalyser! Follow the steps below to analyze YouTube videos.</p>
+            <ol className="instructions">
+                <li>Enter the URL of the YouTube video you wish to analyze.</li>
+                <li>Click on 'Start Chat' to process the video.</li>
+                <li>Interact with the chat interface to get insights about the video content.</li>
+            </ol>
             <form onSubmit={handleSubmit} className="form">
                 <input
                     type="text"
@@ -44,7 +45,8 @@ function YouTubeURLForm() {
                     placeholder="Enter YouTube URL"
                     required
                 />
-                <button type="submit" className="button">Start Chat</button>
+                <button type="submit" className="button" disabled={isLoading}>Start Chat</button>
+                {isLoading && <div className="loading-bar"></div>}
             </form>
         </div>
     );
