@@ -1,4 +1,4 @@
-# YouTube Analyzer End-to-End
+# YTVideoAnalyser
 
 This project is an end-to-end solution for analyzing YouTube videos. It includes both a frontend and a backend, designed to interact with a Python model using LLM (Large Language Models) and RAG (Retrieval-Augmented Generation) techniques. The backend is built with Django, and the frontend is created using React.js.
 
